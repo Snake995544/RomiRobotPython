@@ -22,7 +22,7 @@ robotpy_extras = [
     # "photonvision",
     # "playingwithfusion",
     # "rev",
-    # "romi",
+    "romi",
     # "sim",
     # "xrp",
 ]
