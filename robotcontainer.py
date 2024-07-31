@@ -87,5 +87,4 @@ class RobotContainer:
         return ArcadeDrive(
             self.drivetrain,
             lambda: self.controller.getY(),
-            lambda: self.controller.getX(),
         )
