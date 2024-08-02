@@ -77,7 +77,7 @@ class RobotContainer:
         #wpilib.SmartDashboard.putData(self.chooser)
 
     def getAutonomousCommand(self) -> typing.Optional[commands2.Command]:
-        return ArcadeDrive(self.drivetrain, self.zero(), self.one())
+        return ArcadeDrive(self.drivetrain, lambda: self.zero(), lambda: self.one())
     def getArcadeDriveCommand(self) -> ArcadeDrive:
         """Use this to pass the teleop command to the main robot class.
 
