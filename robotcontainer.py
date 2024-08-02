@@ -88,7 +88,7 @@ class RobotContainer:
             lambda: self.controller.getX(),
             lambda: self.controller.getY(),
         )
-    def zero(self) -> int:
+    def zero(self) -> float:
         return 0
-    def one(self) -> int:
+    def one(self) -> float:
         return 1
