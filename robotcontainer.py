@@ -34,7 +34,9 @@ class RobotContainer:
 
         # Create SmartDashboard chooser for autonomous routines
         self.chooser = wpilib.SendableChooser()
-
+        self.drivetrain = Drivetrain()
+        self.drivetrain.setDefaultCommand(self.getDrive())
+        
         # NOTE: The I/O pin functionality of the 5 exposed I/O pins depends on the hardware "overlay"
         # that is specified when launching the wpilib-ws server on the Romi raspberry pi.
         # By default, the following are available (listed in order from inside of the board to outside):
@@ -47,6 +49,9 @@ class RobotContainer:
         # Your subsystem configuration should take the overlays into account
 
         self._configureButtonBindings()
+
+    def getDrive(self):
+        return ArcadeDrive(self.drivetrain, lambda: -self.controller.getY(), lambda: -self.controller.getX())
 
     def _configureButtonBindings(self):
         """Use this method to define your button->command mappings. Buttons can be created by
